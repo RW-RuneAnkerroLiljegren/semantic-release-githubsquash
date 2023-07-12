@@ -1,6 +1,6 @@
 {
   "name": "semantic-release-githubsquash",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "A tiny wrapper for commit-analyzer and release-notes-generator which works with squashed pull requests.",
   "main": "src/index.js",
   "repository": {
@@ -10,9 +10,9 @@
   "author": "Rune Ankerro Liljegren",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/romap0/semantic-release-githubsquash/issues"
+    "url": "https://github.com/RuneALiljegren/semantic-release-githubsquash/issues"
   },
-  "homepage": "https://github.com/romap0/semantic-release-githubsquash#readme",
+  "homepage": "https://github.com/RuneALiljegren/semantic-release-githubsquash#readme",
   "keywords": [
     "changelog",
     "commit-analyzer",
