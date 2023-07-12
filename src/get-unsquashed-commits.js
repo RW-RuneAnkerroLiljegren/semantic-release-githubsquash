@@ -6,13 +6,13 @@ const getUnsquashedCommits = (context) => {
       return [...acc, commit];
     }
 
-    const stashedCommits = commit.body.split('*').map((line) => line.trim());
+    const stashedCommits = commit.body.split('\n');
 
     return [
       ...acc,
       commit,
       ...stashedCommits.map((stashedCommit) => {
-        const [subject, , ...body] = stashedCommit.split('\n');
+        const [subject, , ...body] = stashedCommit;
         return {
           ...commit,
           subject,
