@@ -1,3 +1,4 @@
+//documentation about semantic-release plugins contexts: https://semantic-release.gitbook.io/semantic-release/developer-guide/plugin#context
 const modifySquashedCommits = (context) => {
   const { commits } = context;
   const { logger } = context;
