@@ -5,11 +5,11 @@ const {
   generateNotes: originalGenerateNotes,
 } = require('@semantic-release/release-notes-generator');
 
-const { getUnsquashedCommits } = require('./get-unsquashed-commits');
+const { modifySquashedCommits } = require('./get-unsquashed-commits');
 
 const analyzeCommits = async (pluginConfig, context) => {
   const { commitAnalyzerConfig } = pluginConfig || {};
-  const commits = getUnsquashedCommits(context);
+  const commits = modifySquashedCommits(context);
 
   return originalAnalyzeCommits(commitAnalyzerConfig ?? {}, {
     ...context,
@@ -19,7 +19,7 @@ const analyzeCommits = async (pluginConfig, context) => {
 
 const generateNotes = async (pluginConfig, context) => {
   const { notesGeneratorConfig } = pluginConfig || {};
-  const commits = getUnsquashedCommits(context);
+  const commits = modifySquashedCommits(context);
 
   return originalGenerateNotes(notesGeneratorConfig ?? {}, {
     ...context,

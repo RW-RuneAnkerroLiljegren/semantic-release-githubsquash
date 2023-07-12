@@ -1,6 +1,6 @@
-const { getUnsquashedCommits } = require('./get-unsquashed-commits');
+const { modifySquashedCommits } = require('./get-unsquashed-commits');
 
-describe(getUnsquashedCommits.name, () => {
+describe(modifySquashedCommits.name, () => {
   it('should return unsquashed commits', () => {
     const commits = [
       {
@@ -32,7 +32,7 @@ describe(getUnsquashedCommits.name, () => {
     ];
     const context = { commits };
 
-    expect(getUnsquashedCommits(context)).toMatchInlineSnapshot(`
+    expect(modifySquashedCommits(context)).toMatchInlineSnapshot(`
       [
         {
           "body": "* fix: restrict job branches

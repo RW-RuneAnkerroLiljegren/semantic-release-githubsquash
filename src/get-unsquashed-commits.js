@@ -1,29 +1,43 @@
-const getUnsquashedCommits = (context) => {
+const modifySquashedCommits = (context) => {
   const { commits } = context;
+  const { logger } = context;
 
-  return commits.reduce((acc, commit) => {
-    if (!commit.body.startsWith('* ')) {
-      return [...acc, commit];
+  const modifiedCommits = [];
+
+  for(const commit of commits)
+  {
+    //logger.log('Commit: ' + commit.body);
+    //logger.log('Subject: ' + commit.subject);
+    //logger.log('Message: ' + commit.message);
+    const commitLines = commit.message.split('\n');
+    if(commitLines.length < 2)
+    {
+      logger.log('Skipping github commit: ' + commit.message);
+      const newCommit = {
+        ...commit
+      };
+      modifiedCommits.push(newCommit);
     }
+    else
+    {
+      logger.log('Found github commit: ' + commit.message);
+      
+      commitLines.shift();
+      commitLines.shift();
+      const [subject, , ...body] = commitLines;
 
-    const stashedCommits = commit.body.split('\n');
-
-    console.log(stashedCommits)
-    
-    return [
-      ...acc,
-      commit,
-      ...stashedCommits.map((stashedCommit) => {
-        const [subject, , ...body] = stashedCommit;
-        return {
-          ...commit,
-          subject,
+      const newCommit = {
+      ...commit,
+          subject: subject,
           body: body.join('\n'),
-          message: stashedCommit,
-        };
-      }),
-    ];
-  }, []);
+          message: commitLines.join('\n'),
+      };
+      logger.log('Modified commit: ' + newCommit.message);
+      modifiedCommits.push(newCommit);
+    }
+  }
+  
+   return modifiedCommits;
 };
 
-module.exports = { getUnsquashedCommits };
+module.exports = { modifySquashedCommits };
