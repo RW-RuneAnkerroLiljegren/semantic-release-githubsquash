@@ -6,7 +6,7 @@ A big thank you to [semantic-release-unsquash](https://github.com/romap0/semanti
 
 The idea with this wrapper is to allow for a headline as a commit message and and use the body for all the semantic versioning messages.
 
-[![npm latest version](https://img.shields.io/npm/v/semantic-release-unsquash/latest.svg)](https://www.npmjs.com/package/semantic-release-unsquash)
+[![npm latest version](https://img.shields.io/npm/v/semantic-release-githubsquash/latest.svg)](https://www.npmjs.com/package/semantic-release-githubsquash)
 
 ## Install
 

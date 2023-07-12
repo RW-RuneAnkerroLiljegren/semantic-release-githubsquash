@@ -8,6 +8,8 @@ const getUnsquashedCommits = (context) => {
 
     const stashedCommits = commit.body.split('\n');
 
+    console.log(stashedCommits)
+    
     return [
       ...acc,
       commit,

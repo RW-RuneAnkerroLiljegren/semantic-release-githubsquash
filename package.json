@@ -1,18 +1,18 @@
 {
-  "name": "semantic-release-unsquash",
-  "version": "0.1.2",
-  "description": "A tiny wrapper for commit-analyzer and release-notes-generator which works with squashed MRs",
+  "name": "semantic-release-githubsquash",
+  "version": "0.2.0",
+  "description": "A tiny wrapper for commit-analyzer and release-notes-generator which works with squashed pull requests.",
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/romap0/semantic-release-unsquash.git"
+    "url": "git+https://github.com/RuneALiljegren/semantic-release-githubsquash.git"
   },
-  "author": "Roman Pavlov <hi@romap0.dev>",
-  "license": "ISC",
+  "author": "Rune Ankeero Liljegren",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/romap0/semantic-release-unsquash/issues"
+    "url": "https://github.com/romap0/semantic-release-githubsquash/issues"
   },
-  "homepage": "https://github.com/romap0/semantic-release-unsquash#readme",
+  "homepage": "https://github.com/romap0/semantic-release-githubsquash#readme",
   "keywords": [
     "changelog",
     "commit-analyzer",
